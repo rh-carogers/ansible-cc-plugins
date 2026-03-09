@@ -1,0 +1,14 @@
+{
+  "name": "ansible-cc-plugins",
+  "owner": {
+    "name": "rh-carogers"
+  },
+  "plugins": [
+    {
+      "name": "ansible-agile-coach",
+      "source": "./plugins/ansible-agile-coach",
+      "description": "Agile product ownership coaching and user story expertise",
+      "version": "1.0.0"
+    }
+  ]
+}
