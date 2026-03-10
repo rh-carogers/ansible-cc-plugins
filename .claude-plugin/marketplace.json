@@ -11,8 +11,8 @@
       "version": "1.0.0"
     },
     {
-      "name": "doc-summarizer",
-      "source": "./plugins/doc-summarizer",
+      "name": "doc-tools",
+      "source": "./plugins/doc-tools",
       "description": "General-purpose document summarization into AI-agent-friendly markdown",
       "version": "1.0.0"
     }

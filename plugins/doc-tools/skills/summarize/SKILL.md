@@ -1,5 +1,5 @@
 ---
-name: doc-summarizer
+name: summarize
 description: >
   Summarize documents into AI-agent-friendly markdown. Use when the user asks to
   summarize a document, create a reference summary, convert documentation to markdown,
@@ -10,7 +10,7 @@ description: >
 
 ## What This Skill Does
 
-This skill orchestrates document summarization by dispatching the `doc-summarizer` agent.
+This skill orchestrates document summarization by dispatching the `summarizer` agent.
 When activated, invoke the doc-summarizer agent to handle the full workflow of reading,
 analyzing, and formatting documents into AI-agent-friendly markdown.
 
@@ -25,7 +25,7 @@ analyzing, and formatting documents into AI-agent-friendly markdown.
 
 1. Identify the source document(s) the user wants summarized
 2. If the user has not specified an output path, ask where to save the summary
-3. Dispatch the `doc-summarizer` agent with the source and output path
+3. Dispatch the `summarizer` agent with the source and output path
 4. The agent handles reading, analyzing, formatting, and saving
 
 ## Output Conventions

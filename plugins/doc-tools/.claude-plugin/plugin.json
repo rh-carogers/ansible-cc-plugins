@@ -1,5 +1,5 @@
 {
-  "name": "doc-summarizer",
+  "name": "doc-tools",
   "version": "1.0.0",
   "description": "General-purpose document summarization into AI-agent-friendly markdown",
   "author": {
