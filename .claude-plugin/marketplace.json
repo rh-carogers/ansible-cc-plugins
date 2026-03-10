@@ -9,6 +9,12 @@
       "source": "./plugins/ansible-agile-coach",
       "description": "Agile product ownership coaching and user story expertise",
       "version": "1.0.0"
+    },
+    {
+      "name": "doc-summarizer",
+      "source": "./plugins/doc-summarizer",
+      "description": "General-purpose document summarization into AI-agent-friendly markdown",
+      "version": "1.0.0"
     }
   ]
 }
