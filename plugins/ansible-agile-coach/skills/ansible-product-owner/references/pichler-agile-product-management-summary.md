@@ -1,6 +1,11 @@
-# Pichler: Agile Product Management with Scrum -- Coaching Reference
+---
+source_type: gdrive
+source_id: "1LSdQ2VpNj_uZB1ylEiUGVbRVEyvIRwRH"
+source_name: "Agile Product Management with Scrum"
+last_summarized: 2026-03-03
+---
 
-Source: Roman Pichler, *Agile Product Management with Scrum: Creating Products that Customers Love* (Addison-Wesley, 2010). Google Drive file ID: `1LSdQ2VpNj_uZB1ylEiUGVbRVEyvIRwRH`
+# Pichler: Agile Product Management with Scrum -- Coaching Reference
 
 ---
 
@@ -381,7 +386,3 @@ Themes > Epics > User Stories, with effort estimates. Nonfunctional requirements
 4. **Sustain the role**: Create development programs, career paths, PO communities; make organizational changes as needed
 
 ---
-
-## Source
-
-This summary was generated from the extracted text of "Agile Product Management with Scrum" by Roman Pichler (Addison-Wesley, 2010) on 2026-03-03. Content is organized by coaching use cases for AI agent consumption.

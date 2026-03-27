@@ -1,7 +1,13 @@
+---
+source_type: gdrive
+source_id: "1Gq3jc2mXmgfXn3FTu_64Zv7kuUfxR0oB"
+source_name: "2020-Scrum-Guide-US.pdf"
+last_summarized: 2026-03-03
+---
+
 # 2020 Scrum Guide — Coaching Reference
 
 Summary of the 2020 Scrum Guide by Ken Schwaber and Jeff Sutherland.
-Source: `2020-Scrum-Guide-US.pdf` — Google Drive file ID: `1Gq3jc2mXmgfXn3FTu_64Zv7kuUfxR0oB`
 
 ## Scrum Definition
 

@@ -1,8 +1,13 @@
+---
+source_type: gdrive
+source_id: "17L9r6ZSy6VbKNcTw0haQRrWXBkNnSdb9"
+source_name: "User-Stories-Applied-Mike-Cohn.pdf"
+last_summarized: 2026-03-03
+---
+
 # User Stories Applied (Mike Cohn) -- AI Product Owner Coaching Reference
 
 A coaching-optimized summary of "User Stories Applied: For Agile Software Development" (Addison-Wesley, 2004). Organized by coaching use case, not chapter order. All content derived from the source text.
-
-Source: `User-Stories-Applied-Mike-Cohn.pdf` — Google Drive file ID: `17L9r6ZSy6VbKNcTw0haQRrWXBkNnSdb9`
 
 ---
 
@@ -380,5 +385,3 @@ Use during backlog refinement or story writing sessions:
 | **Triangulation** | Verifying an estimate by comparing it to other estimated stories |
 
 ---
-
-Source: "User Stories Applied: For Agile Software Development" by Mike Cohn (Addison-Wesley, 2004). Local file: `/Users/carogers/git-checkouts/manager-toolkit/.claude/skills/ansible-product-owner/references/User-Stories-Applied-Mike-Cohn.pdf`. Summary created 2026-03-03.
