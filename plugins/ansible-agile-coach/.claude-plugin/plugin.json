@@ -1,6 +1,6 @@
 {
   "name": "ansible-agile-coach",
-  "version": "1.1.0",
+  "version": "1.0.1",
   "description": "Agile product ownership coaching and user story expertise for Ansible teams",
   "author": {
     "name": "rh-carogers"
