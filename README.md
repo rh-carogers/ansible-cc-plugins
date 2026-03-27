@@ -7,7 +7,7 @@ A Claude Code marketplace of reusable plugins for Ansible teams.
 | Plugin              | Description                                                            | Version |
 | ------------------- | ---------------------------------------------------------------------- | ------- |
 | ansible-agile-coach | Agile product ownership coaching and user story expertise              | 1.0.1   |
-| doc-tools           | General-purpose document summarization into AI-agent-friendly markdown | 1.1.0   |
+| doc-tools           | General-purpose document summarization into AI-agent-friendly markdown | 1.1.1   |
 
 ## Installation
 

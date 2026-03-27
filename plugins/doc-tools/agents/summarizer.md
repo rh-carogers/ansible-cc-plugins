@@ -190,6 +190,49 @@ After processing all files, return a report in this format:
 Categorize every file into exactly one of these four sections. Omit empty sections.
 For updated files, include a brief description of what materially changed in the source document.
 
+## Summary Depth
+
+Aim for roughly 10-20% of the original document's length:
+- A 5-page doc → 0.5-1 page summary
+- A 50-page doc → 5-10 pages
+- A 200-page book → 20-30 pages (focus on the most actionable content)
+
+These are guidelines, not rules. A dense technical spec may need more coverage
+than a narrative document with lots of repetition. Prioritize preserving
+information that an AI agent or human would need to act on, not just understand.
+
+## Adapting to Document Type
+
+Adjust your summarization approach based on the source material:
+
+| Document Type | Prioritize | De-prioritize |
+|---------------|-----------|---------------|
+| API specs / technical references | Endpoints, parameters, schemas, error codes | Introductory prose, marketing language |
+| Guides / tutorials | Workflow steps, key concepts, gotchas | Motivational context, lengthy examples |
+| Meeting notes / transcripts | Decisions, action items, owners, deadlines | Discussion that led to decisions |
+| Policy / compliance docs | Requirements, rules, exceptions, deadlines | Rationale paragraphs unless they clarify scope |
+| Architecture docs | Components, interfaces, constraints, tradeoffs | Historical context unless it explains current state |
+
+## Example: Good Summarization
+
+**Source text:**
+> The authentication system uses JWT tokens with a 24-hour expiration window.
+> When a token expires, the client must request a new token using the refresh
+> token endpoint. Refresh tokens have a 30-day expiration. We chose JWT over
+> session-based auth because our architecture is stateless and distributed
+> across multiple regions. The team evaluated OAuth2, SAML, and custom token
+> approaches before settling on JWT. Implementation began in Q3 2024.
+
+**Good summary:**
+- JWT tokens (24h expiry), refresh tokens (30d expiry)
+- Stateless/distributed architecture drove the JWT choice over session-based auth
+- Refresh endpoint: client must request new token when JWT expires
+
+**What was cut and why:**
+- Evaluation history (OAuth2, SAML comparison) — not actionable
+- Implementation timeline — ephemeral context
+- Detailed reasoning already captured by noting "stateless/distributed"
+
 ## Quality Criteria
 
 - **Scannable**: Use clear headings for easy navigation

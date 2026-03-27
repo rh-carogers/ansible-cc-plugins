@@ -7,9 +7,13 @@ description: >
   consumption, update reference files, refresh summaries, or re-summarize existing
   references. Also use when the user says things like "summarize this doc", "create a
   reference from this", "make this AI-friendly", "update the reference files",
-  "refresh the summaries", or "re-summarize the references".
-context: fork
-agent: summarizer
+  "refresh the summaries", or "re-summarize the references". Also trigger for
+  condensing requests ("condense this", "give me the key points", "extract the
+  important parts", "TL;DR"), cheat sheet or quick reference creation ("create a
+  cheat sheet", "make a quick reference"), readability improvements ("this doc is
+  too long", "make this readable"), and file format conversion ("turn this PDF into
+  markdown", "convert this doc"). Use this skill proactively when the user shares or
+  references a long document and would benefit from a structured summary.
 ---
 
 ## What This Skill Does
