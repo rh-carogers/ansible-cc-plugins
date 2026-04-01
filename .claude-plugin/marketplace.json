@@ -7,8 +7,8 @@
     {
       "name": "ansible-agile-coach",
       "source": "./plugins/ansible-agile-coach",
-      "description": "Agile product ownership coaching and user story expertise",
-      "version": "1.0.1"
+      "description": "Agile coaching, Jira expertise, and product ownership guidance",
+      "version": "1.1.0"
     },
     {
       "name": "doc-tools",
