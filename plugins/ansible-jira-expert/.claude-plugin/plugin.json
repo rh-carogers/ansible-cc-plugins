@@ -1,0 +1,9 @@
+{
+  "name": "ansible-jira-expert",
+  "version": "1.1.0",
+  "description": "Jira specialist agent for searching, managing, and analyzing issues",
+  "author": {
+    "name": "rh-carogers"
+  },
+  "mcpServers": "./.mcp.json"
+}

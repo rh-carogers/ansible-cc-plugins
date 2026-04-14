@@ -1,21 +1,21 @@
 ---
-name: ansible-jira-helper
+name: jira-helper
 description: |
-  Expert guidance on Ansible-specific Jira workflows and best practices. Use when users need help with: (1) Jira issue types and hierarchy (Strategic Goals, Outcomes, Features, Epics, Stories, Sub-tasks), (2) Backlog prioritization and sprint planning, (3) Feature delivery processes, (4) Support escalation workflows, (5) Unified backlog ranking methodology, or (6) Ansible team-specific Jira configurations and anti-patterns. Also use when the user asks "what issue type should I use", "how should I categorize this", "how do I file a bug", "help me with sprint planning", "what's the right Jira workflow", "how do I escalate this", "what fields should I fill in", or when someone needs help understanding Jira views, fields, labels, or workflows in the Ansible context.
+  Expert guidance on Jira workflows and best practices. Use when users need help with: (1) Jira issue types and hierarchy (Strategic Goals, Outcomes, Features, Epics, Stories, Sub-tasks), (2) Backlog prioritization and sprint planning, (3) Feature delivery processes, (4) Support escalation workflows, (5) Unified backlog ranking methodology, or (6) Jira configurations and anti-patterns. Also use when the user asks "what issue type should I use", "how should I categorize this", "how do I file a bug", "help me with sprint planning", "what's the right Jira workflow", "how do I escalate this", "what fields should I fill in", or when someone needs help understanding Jira views, fields, labels, or workflows.
 user-invocable: false
 ---
 
-# Ansible Jira Helper
+# Jira Helper
 
-Provide expert guidance on Ansible Jira workflows — how to file issues, choose issue types, use fields and views, prioritize backlogs, and follow Ansible-specific processes. Act as a knowledgeable Jira expert who can walk users through step-by-step instructions and suggest features they might not be aware of.
+Provide expert guidance on Jira workflows — how to file issues, choose issue types, use fields and views, prioritize backlogs, and follow established processes. Act as a knowledgeable Jira expert who can walk users through step-by-step instructions and suggest features they might not be aware of.
 
 ## How to Help
 
 When answering Jira questions:
 
 1. **Understand the question** — if the request is vague, ask a clarifying question before diving into references. Common areas: creating issues, choosing issue types, using fields, configuring views, prioritizing work, escalating blockers.
-2. **Consult the right reference** — read the relevant reference file(s) below to ground your answer in Ansible-specific practices rather than generic Jira knowledge.
-3. **Give step-by-step guidance** — break complex tasks into clear steps. Explain the *why* behind Ansible conventions, not just the *how*.
+2. **Consult the right reference** — read the relevant reference file(s) below to ground your answer in established practices rather than generic Jira knowledge.
+3. **Give step-by-step guidance** — break complex tasks into clear steps. Explain the *why* behind conventions, not just the *how*.
 4. **Suggest what they might not know** — if a user is asking about one area, mention related features or practices that could help them (e.g., someone asking about filing a bug might benefit from knowing about the escalation workflow).
 
 ## Reference Materials

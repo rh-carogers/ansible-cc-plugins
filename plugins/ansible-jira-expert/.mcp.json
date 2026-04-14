@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "mcp-atlassian": {
+      "command": "uvx",
+      "args": ["mcp-atlassian", "--env-file", "${HOME}/.env.atlassian"]
+    }
+  }
+}

@@ -7,14 +7,20 @@
     {
       "name": "ansible-agile-coach",
       "source": "./plugins/ansible-agile-coach",
-      "description": "Agile coaching, Jira expertise, and product ownership guidance",
-      "version": "1.1.0"
+      "description": "Agile coaching and product ownership guidance for Ansible teams",
+      "version": "1.2.0"
     },
     {
       "name": "doc-tools",
       "source": "./plugins/doc-tools",
       "description": "General-purpose document summarization into AI-agent-friendly markdown",
       "version": "1.1.1"
+    },
+    {
+      "name": "ansible-jira-expert",
+      "source": "./plugins/ansible-jira-expert",
+      "description": "Jira specialist agent for searching, managing, and analyzing issues",
+      "version": "1.1.0"
     }
   ]
 }
