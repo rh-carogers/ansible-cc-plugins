@@ -1,0 +1,59 @@
+# Daily Brief Plugin Configuration
+# Copy this file to .claude/daily-brief.yaml in your project/vault directory.
+# Each top-level section is optional — omit a section to skip that data source.
+
+# Team members to track for demos
+# Option 1: Define members inline
+# Option 2: Point to an external YAML file with roster_file
+#
+# Supported formats:
+# - Flat: top-level `members` list with `name` and `slack_display_name` per entry
+# - Team roster: `teams[0].members` list with `name` and `slack_display_name` per entry
+team:
+  members:
+    - name: "Jane Smith"
+      slack_display_name: "Jane Smith"
+    - name: "Bob Johnson"
+      slack_display_name: "bjohnson"
+  # roster_file: /path/to/roster.yaml
+
+# Slack channels to monitor
+# Get channel IDs from Slack: right-click channel name → View channel details → copy ID
+slack:
+  team_channels:
+    - id: C0000000001
+      name: my-team-channel
+    - id: C0000000002
+      name: my-project-channel
+  org_channels:
+    - id: C0000000003
+      name: org-announcements
+  demos_channel:
+    id: C0000000004
+    name: demos
+
+# Jira backlog monitoring
+# backlog_filter_id: ID of a saved Jira filter that returns your team's backlog
+# escalation_label: label used to flag escalated issues
+jira:
+  backlog_filter_id: "12345"
+  escalation_label: "escalation"
+
+# Community forum monitoring (optional)
+# Fetches topics with new activity from a Discourse tag JSON endpoint
+forum:
+  enabled: false
+  url: "https://forum.example.com/tag/my-tag/514.json"
+  tag: "my-tag"
+
+# Timezone for cutoff calculations and display
+# Uses IANA timezone names (e.g., "America/New_York", "America/Chicago", "Europe/London")
+# The cutoff time is 5:00 PM in this timezone on the previous business day.
+# Dashboard timestamps are displayed in this timezone.
+# Default: America/New_York
+timezone: "America/New_York"
+
+# Output file paths (relative to working directory)
+output:
+  dashboard_path: "Dashboards/daily-brief.md"
+  state_path: "Dashboards/snapshots/daily-brief-state.json"
