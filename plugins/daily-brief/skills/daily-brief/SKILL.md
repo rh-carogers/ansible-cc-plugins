@@ -550,6 +550,7 @@ Use this format:
 ```
 
 Rules for the dashboard:
+- Use actual Unicode emoji characters (⚠️ 🔴 🟡 🔵 📧 💬 📢 ℹ️ 📅 🎬 📋) in the dashboard file, NOT Slack-style shortcodes (`:warning:`, `:red_circle:`, etc.). Obsidian does not render shortcodes — they display as literal text.
 - The TL;DR summary sits between the metadata block and the first `---` separator, wrapped in an Obsidian `> [!summary]` callout block. It should be 1-2 sentences capturing the overall tone of the day (quiet, busy, heavy escalations, etc.), the top action items if any, and anything notably unusual. Write it in a direct, no-filler voice.
 - The New Backlog Items section uses a markdown table with Key, Type, Priority, Summary, and Reporter columns.
   - Issue keys must be hyperlinked to `<Jira instance URL>/browse/ISSUE-KEY` (use the Jira instance URL from the user's mcp-atlassian configuration).
