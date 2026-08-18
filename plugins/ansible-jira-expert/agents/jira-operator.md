@@ -93,52 +93,37 @@ On this Jira instance, `jira_search` returns `"total": -1` on successful queries
 ## Pagination Strategy
 
 <CRITICAL>
-**NEVER PAGINATE BEYOND YOUR ASSIGNED BATCH.**
+**Pagination on this Jira instance is CURSOR-BASED, not offset-based.**
 
-When your prompt specifies `start_at` and `limit` parameters, you MUST:
+The `start_at` parameter is IGNORED — every value returns the same first page. Do NOT use `start_at` to page through results; it will silently return duplicate first-page data and miss everything after the first page.
 
-1. Make exactly ONE jira_search call with those exact parameters
-2. Return only the issues from that single API call
-3. STOP immediately after formatting the results
+To page, use the `next_page_token` cursor:
 
-**DO NOT:**
+1. Make the first `jira_search` call with your JQL and `limit` (max 50). Do NOT set `start_at`.
+2. Read the `issues` array. If the response includes a `next_page_token`, pass it as `page_token` on the next call (same JQL and `limit`) to get the following page.
+3. Repeat until the response has NO `next_page_token` — that is the last page.
+4. Accumulate `issues` across all pages. The total count is the length of the accumulated array (the `total` field is `-1` and must be ignored — see the CRITICAL note under "Executing Searches").
 
-- Fetch additional pages to "be helpful"
-- Loop through all results
-- Make multiple jira_search calls with different offsets
-- Try to get the "complete" picture
-
-Other parallel agents are handling the other batches. Your job is ONE batch only.
+Cursors are SEQUENTIAL: you cannot jump to page N without walking pages 1 through N-1. There is no way to split one query's pages across parallel agents by offset.
 </CRITICAL>
 
-**For large result sets, use a two-step approach to avoid context overflow:**
-
-1. **Count-Only Query**: NOTE — do not rely on the `total` field for a count; on this instance it returns `-1` (see the CRITICAL note under "Executing Searches"). Counts must come from the length of the `issues` array in each retrieved batch, or from following `next_page_token` cursors until exhausted.
-
-2. **Batched Retrieval**: When instructed to retrieve issues with specific pagination parameters (`start_at` and `limit`), retrieve ONLY that batch. Make exactly ONE API call and return results.
-
-**When your prompt includes pagination parameters:**
-
-- Make exactly ONE `jira_search` call with the specified `start_at` and `limit`
-- Return only the issues from that specific batch
-- DO NOT fetch additional pages - this is critical
-- Include concise issue data (key, summary, type, priority, labels, story points)
-
-**Example pagination workflow:**
+**Fetching a complete result set (single agent, sequential):**
 
 ```text
-# Agent 1 prompt: "Get count only"
-→ jira_search(jql="...", limit=1) → total is -1 (unreliable); count via issues array / next_page_token, not this field
-
-# Agent 2 prompt: "Get issues start_at=0, limit=50"
-→ ONE call: jira_search(jql="...", start_at=0, limit=50) → Returns issues 1-50 → STOP
-
-# Agent 3 prompt: "Get issues start_at=50, limit=50"
-→ ONE call: jira_search(jql="...", start_at=50, limit=50) → Returns issues 51-100 → STOP
-
-# Agent 4 prompt: "Get issues start_at=100, limit=50"
-→ ONE call: jira_search(jql="...", start_at=100, limit=50) → Returns issues 101-150 → STOP
+page 1 → jira_search(jql="...", limit=50)                    → 50 issues + next_page_token "A"
+page 2 → jira_search(jql="...", limit=50, page_token="A")    → 50 issues + next_page_token "B"
+page 3 → jira_search(jql="...", limit=50, page_token="B")    → 24 issues, NO next_page_token → STOP
+# Accumulated total = 50 + 50 + 24 = 124 issues
 ```
+
+**When your prompt tells you to fetch ONE page only:**
+
+- Make exactly ONE `jira_search` call (with `page_token` if one was provided to you) and return only that page's issues plus its `next_page_token` (so the orchestrator can request the next page).
+- Do NOT continue walking the cursor — return control after one call.
+
+**Parallelizing large workloads:** split by JQL, not by offset. Give each agent a distinct query (e.g. one per assignee, component, or date range), and let each agent walk its own cursor to completion. Never try to parallelize the pages of a single query.
+
+**Context-overflow guard:** for very large result sets, request only the fields you need (`fields` parameter) and, when a running summary is acceptable, summarize each page before fetching the next rather than holding every issue in context.
 
 ## Output Format
 
