@@ -20,13 +20,13 @@
       "name": "ansible-jira-expert",
       "source": "./plugins/ansible-jira-expert",
       "description": "Jira specialist agent for searching, managing, and analyzing issues",
-      "version": "1.1.1"
+      "version": "1.1.2"
     },
     {
       "name": "daily-brief",
       "source": "./plugins/daily-brief",
       "description": "Daily briefing dashboard from calendar, email, Slack, Jira, and community sources",
-      "version": "1.0.0"
+      "version": "1.0.1"
     }
   ]
 }

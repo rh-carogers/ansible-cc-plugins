@@ -1,6 +1,6 @@
 {
   "name": "daily-brief",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Daily briefing dashboard from calendar, email, Slack, Jira, and community sources",
   "author": {
     "name": "rh-carogers"

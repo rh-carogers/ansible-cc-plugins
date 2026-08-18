@@ -337,6 +337,8 @@ Steps:
 
    Set max_results to 50.
 
+   IMPORTANT: The jira_search response includes a `total` field that is often `-1`. This is NOT an error and does NOT mean zero results — the tool simply does not compute a real total. ALWAYS determine results by reading and counting the `issues` array. A `total: -1` response with a populated `issues` array is a successful search. Never report TOTAL_NEW_ISSUES: 0 based on the `total` field; base the count on `len(issues)`.
+
 2. For each issue returned, extract:
    - Issue key (e.g., AAP-12345)
    - Issue type (Bug, Story, Task, etc.)
