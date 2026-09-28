@@ -1,26 +1,14 @@
 ---
 name: summarize
-description: >
-  Summarize documents into AI-agent-friendly markdown, or update existing summaries
-  from their source documents. Use when the user asks to summarize a document, create
-  a reference summary, convert documentation to markdown, prepare documents for AI
-  consumption, update reference files, refresh summaries, or re-summarize existing
-  references. Also use when the user says things like "summarize this doc", "create a
-  reference from this", "make this AI-friendly", "update the reference files",
-  "refresh the summaries", or "re-summarize the references". Also trigger for
-  condensing requests ("condense this", "give me the key points", "extract the
-  important parts", "TL;DR"), cheat sheet or quick reference creation ("create a
-  cheat sheet", "make a quick reference"), readability improvements ("this doc is
-  too long", "make this readable"), and file format conversion ("turn this PDF into
-  markdown", "convert this doc"). Use this skill proactively when the user shares or
-  references a long document and would benefit from a structured summary.
+description: Summarize documents into structured Markdown for AI agents and human readers, or refresh existing summaries from their source documents.
 ---
 
 ## What This Skill Does
 
-This skill orchestrates document summarization by dispatching the `summarizer` agent.
-When activated, invoke the doc-summarizer agent to handle the full workflow of reading,
-analyzing, and formatting documents into AI-agent-friendly markdown.
+When a client supports subagents, delegate the focused reading and extraction work to a
+document-summarization subagent so the main context stays concise. Give the worker the
+source, requested output path, and output conventions below. If subagents are unavailable,
+follow the same workflow directly.
 
 ## When to Use
 
@@ -35,7 +23,7 @@ analyzing, and formatting documents into AI-agent-friendly markdown.
 1. Identify whether this is a **create** (new summary) or **update** (refresh existing summaries) request
 2. For create: identify the source document(s) and output path (ask if not specified)
 3. For update: identify the directory of existing summary files to refresh
-4. Dispatch the `summarizer` agent — it detects the mode and handles the full workflow
+4. Delegate the reading, analysis, and formatting work when possible; otherwise complete it directly.
 
 ## Output Conventions
 

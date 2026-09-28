@@ -4,31 +4,27 @@ Daily briefing dashboard from calendar, email, Slack, Jira, and community source
 
 ## Prerequisites
 
-This plugin requires three MCP servers to be configured in your Claude Code environment:
+This plugin requires these MCP capabilities to be configured in your agent:
 
 | MCP Server | Purpose | Setup |
 |------------|---------|-------|
-| [google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | Calendar events, Gmail search | See repo README for auth setup |
-| [slack-mcp](https://github.com/redhat-community-ai-tools/slack-mcp) | Channel history, message search, user identity | See repo README for token setup |
-| [mcp-atlassian](https://github.com/sooperset/mcp-atlassian) | Jira issue search | See repo README for credentials |
+| [google_workspace_mcp](https://github.com/taylorwilsdon/google_workspace_mcp) | Calendar events, Gmail search | Follow the upstream project documentation |
+| [slack-mcp](https://github.com/redhat-community-ai-tools/slack-mcp) | Channel history, message search, user identity | Follow the upstream project documentation |
+| [mcp-atlassian](https://github.com/sooperset/mcp-atlassian) | Jira issue search | Required when the `jira` section is configured; follow the upstream project documentation |
 
-The Google Workspace and Slack MCP servers are required. The Jira MCP server is only needed if you configure the `jira` section in your config.
+The Google Workspace and Slack MCP servers are required. The Jira MCP server is required if you configure the `jira` section.
 
-## Installation
-
-```bash
-claude plugin install daily-brief@ansible-cc-plugins --scope user
-```
+Install this plugin through the marketplace workflow of your agent.
 
 ## Configuration
 
-Copy the example config to your project directory:
+Copy the example config to `daily-brief.yaml` in your project directory:
 
 ```bash
-cp ~/.claude/plugins/cache/*/daily-brief/config.example.yaml .claude/daily-brief.yaml
+cp <installed-plugin-path>/config.example.yaml daily-brief.yaml
 ```
 
-Edit `.claude/daily-brief.yaml` with your values. See `config.example.yaml` for detailed comments on each section.
+Edit `daily-brief.yaml` with your values. See `config.example.yaml` for detailed comments on each section.
 
 ### Required sections
 

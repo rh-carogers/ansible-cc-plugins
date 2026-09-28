@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "daily-brief",
+  "version": "1.0.1",
+  "description": "Daily briefing dashboard from calendar, email, Slack, Jira, and community sources",
+  "author": {
+    "name": "rh-carogers"
+  },
+  "repository": "https://github.com/rh-carogers/ansible-cc-plugins",
+  "keywords": ["daily-brief", "calendar", "email", "slack", "jira"]
+}

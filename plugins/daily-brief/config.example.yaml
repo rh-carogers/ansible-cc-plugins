@@ -1,5 +1,5 @@
 # Daily Brief Plugin Configuration
-# Copy this file to .claude/daily-brief.yaml in your project/vault directory.
+# Copy this file to daily-brief.yaml in your project/vault directory.
 # Each top-level section is optional — omit a section to skip that data source.
 
 # Team members to track for demos

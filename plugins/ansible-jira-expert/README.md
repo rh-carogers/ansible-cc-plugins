@@ -1,18 +1,16 @@
 # ansible-jira-expert
 
-Jira specialist agent for searching, managing, and analyzing issues.
+Jira workflow guidance and MCP-backed issue search, analysis, and management.
 
 ## Components
 
-- **Agent: jira-operator** — Searches, creates, updates, and summarizes Jira issues
-- **Skill: jira-helper** — Expert guidance on Jira workflows, issue types, backlog prioritization, and escalation processes
+- **Skill: jira-helper** — Expert guidance on Jira workflows, issue types, backlog prioritization, escalation processes, and live Jira operations.
 
 ## Prerequisites
 
-Create `~/.env.atlassian` with your Jira credentials. See [mcp-atlassian docs](https://github.com/sooperset/mcp-atlassian) for the required format.
+Every user must configure an external MCP server named `mcp-atlassian`. See the upstream
+[installation](https://github.com/sooperset/mcp-atlassian/blob/main/docs/installation.mdx)
+and [authentication](https://github.com/sooperset/mcp-atlassian/blob/main/docs/authentication.mdx)
+documentation for the server setup.
 
-## Installation
-
-```bash
-claude plugin install ansible-jira-expert@ansible-cc-plugins --scope user
-```
+Install this plugin through the marketplace workflow of your agent.
