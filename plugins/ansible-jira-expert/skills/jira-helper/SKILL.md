@@ -1,11 +1,21 @@
 ---
 name: jira-helper
-description: |
-  Expert guidance on Jira workflows and best practices. Use when users need help with: (1) Jira issue types and hierarchy (Strategic Goals, Outcomes, Features, Epics, Stories, Sub-tasks), (2) Backlog prioritization and sprint planning, (3) Feature delivery processes, (4) Support escalation workflows, (5) Unified backlog ranking methodology, or (6) Jira configurations and anti-patterns. Also use when the user asks "what issue type should I use", "how should I categorize this", "how do I file a bug", "help me with sprint planning", "what's the right Jira workflow", "how do I escalate this", "what fields should I fill in", or when someone needs help understanding Jira views, fields, labels, or workflows.
-user-invocable: false
+description: Help users understand Jira workflows and perform Jira issue search, analysis, and management through the required mcp-atlassian server.
 ---
 
 # Jira Helper
+
+## Live Jira access and delegation
+
+This plugin requires an externally configured MCP server named `mcp-atlassian` for live Jira access. Do not assume client-specific MCP tool names. When a request requires live Jira data or changes, delegate the focused Jira work to a subagent when the client supports subagents and ask it to return only the relevant records, fields, and conclusions. If delegation is unavailable, perform the work directly through the configured server.
+
+The Jira worker must:
+
+- Verify that tool responses contain actual data before analyzing them; never fabricate Jira results.
+- Follow the user's JQL exactly when one is provided.
+- Count the `issues` array rather than trusting a `total` field, which may be `-1`.
+- Use cursor pagination with `next_page_token` and `page_token`; never use `start_at` for this Jira instance.
+- Preserve issue keys, links, field names, and technical identifiers exactly.
 
 Provide expert guidance on Jira workflows — how to file issues, choose issue types, use fields and views, prioritize backlogs, and follow established processes. Act as a knowledgeable Jira expert who can walk users through step-by-step instructions and suggest features they might not be aware of.
 

@@ -1,0 +1,36 @@
+{
+  "name": "ansible-cc-plugins",
+  "interface": {
+    "displayName": "Ansible Agent Plugins"
+  },
+  "plugins": [
+    {
+      "name": "ansible-agile-coach",
+      "source": {
+        "source": "local",
+        "path": "./plugins/ansible-agile-coach"
+      }
+    },
+    {
+      "name": "ansible-jira-expert",
+      "source": {
+        "source": "local",
+        "path": "./plugins/ansible-jira-expert"
+      }
+    },
+    {
+      "name": "daily-brief",
+      "source": {
+        "source": "local",
+        "path": "./plugins/daily-brief"
+      }
+    },
+    {
+      "name": "doc-tools",
+      "source": {
+        "source": "local",
+        "path": "./plugins/doc-tools"
+      }
+    }
+  ]
+}

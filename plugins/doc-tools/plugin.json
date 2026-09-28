@@ -1,4 +1,5 @@
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "doc-tools",
   "version": "1.1.1",
   "description": "Summarize documents into structured, AI-agent-friendly Markdown",
@@ -6,5 +7,5 @@
     "name": "rh-carogers"
   },
   "repository": "https://github.com/rh-carogers/ansible-cc-plugins",
-  "keywords": ["documentation", "summarization", "markdown", "reference"]
+  "keywords": ["documents", "summarization", "markdown"]
 }

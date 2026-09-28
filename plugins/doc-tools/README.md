@@ -1,14 +1,9 @@
 # Doc Tools Plugin
 
-General-purpose document summarization into AI-agent-friendly markdown.
+Document summarization into structured, AI-agent-friendly Markdown.
 
 ## Components
 
-- **Agent: summarizer** — Reads documents from any accessible source and produces structured markdown summaries
-- **Skill: summarize** — Triggers the agent when summarization is needed
+- **Skill: summarize** — Reads, analyzes, and formats documents into structured summaries. It delegates focused work to a subagent when the hosting agent supports subagents.
 
-## Installation
-
-```bash
-claude plugin install doc-tools@ansible-cc-plugins
-```
+Install this plugin through the marketplace workflow of your agent.
